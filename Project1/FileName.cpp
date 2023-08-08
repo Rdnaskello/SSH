@@ -48,13 +48,20 @@ int main() {
 	circle c(7);
 	triangle t(3, 4, 5);
 
-	figure* shape = &c;
+	/*figure* shape = &c;
 	cout << "Circle aera " << shape->aera() << endl;
 	cout << "Circle perimeter " << shape->perimeter() << endl;
 
 	shape = &t;
 	cout << "triangle aera " << shape->aera() << endl;
 	cout << "triangle perimeter " << shape->perimeter() << endl;
+	*/
+
+	figure* shape[2] = { new circle(7), new triangle(3, 4, 5) };
+	for (int i = 0; i < 2; i++) {
+		cout << shape[i]->aera() << endl;
+		cout << shape[i]->perimeter() << endl;
+	}
 
 
 	return 0;
